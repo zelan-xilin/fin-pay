@@ -168,8 +168,10 @@ export const illustration = {
 import faceId from "../assets/setting/face-id.png";
 import fingerprint from "../assets/setting/fingerprint.png";
 import safe from "../assets/setting/safe.png";
+import user from "../assets/setting/user.png";
 export const setting = {
   faceId,
   fingerprint,
   safe,
+  user,
 };
