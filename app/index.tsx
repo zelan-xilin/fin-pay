@@ -1,23 +1,12 @@
-import { Text, View } from "react-native";
+import { useGlobalContext } from "@/lib/GlobalContext";
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text className="body-primary">
-        Edit app/index.tsx to edit this screen.
-      </Text>
-      <Text className="body-secondary">
-        Edit app/index.tsx to edit this screen.
-      </Text>
-      <Text className="body-tertiary">
-        Edit app/index.tsx to edit this screen.
-      </Text>
-    </View>
-  );
+  const { isLoaded } = useGlobalContext();
+
+  if (isLoaded) {
+    return <Redirect href="/home" />;
+  }
+
+  return <Redirect href="/sign-in" />;
 }
