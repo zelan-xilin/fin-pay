@@ -65,10 +65,10 @@ module.exports = {
         },
 
         ".card-effect": {
-          "@apply shadow-[0px_4px_30px_rgba(54,41,183,0.07)]": {},
+          "@apply bg-white shadow-[0px_4px_30px_rgba(54,41,183,0.07)]": {},
         },
         ".card-effect-sm": {
-          "@apply shadow-[0px_-5px_30px_rgba(54,41,183,0.07)]": {},
+          "@apply bg-white shadow-[0px_-5px_30px_rgba(54,41,183,0.07)]": {},
         },
       });
     },
