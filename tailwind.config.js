@@ -58,7 +58,7 @@ module.exports = {
         },
 
         ".caption-primary": {
-          "@apply font-SemiBold text-xs": {},
+          "@apply font-SemiBold text-base": {},
         },
         ".caption-secondary": {
           "@apply font-Medium text-sm": {},
