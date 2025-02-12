@@ -1,3 +1,4 @@
+import { GlobalProvider } from "@/lib/GlobalContext";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -24,5 +25,13 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Stack />;
+  return (
+    <GlobalProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(auth)" />
+        <Stack.Screen name="(tabs)" />
+      </Stack>
+    </GlobalProvider>
+  );
 }
