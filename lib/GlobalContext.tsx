@@ -13,7 +13,13 @@ interface GlobalContextType {
   login: (account: string, password: string) => void;
   logout: () => void;
 }
-const GlobalContext = createContext<GlobalContextType | undefined>(undefined);
+const GlobalContext = createContext<GlobalContextType>({
+  user: undefined,
+  loading: false,
+  isLoaded: false,
+  login: () => {},
+  logout: () => {},
+});
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<GlobalContextType["user"] | undefined>();
