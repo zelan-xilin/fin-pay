@@ -1,7 +1,7 @@
 import { icon, illustration } from "@/constants/assets";
 import colors from "@/constants/colors";
-import { validateEmail } from "@/constants/regex";
 import { useGlobalContext } from "@/lib/GlobalContext";
+import { validateEmail } from "@/lib/utils";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import {
