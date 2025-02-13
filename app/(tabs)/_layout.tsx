@@ -38,7 +38,7 @@ const TabBar = ({ state, navigation }: BottomTabBarProps) => {
   };
 
   return (
-    <View className="h-24 flex-row bg-neutral-600">
+    <View className="h-24 flex-row bg-neutral-600 card-effect-sm">
       {routes.map((it, idx) => (
         <Pressable
           key={it.key}
