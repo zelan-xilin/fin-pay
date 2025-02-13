@@ -20,7 +20,7 @@ export default function AuthLayout() {
   }
 
   return (
-    <View className="bg-primary-100 h-full pt-24 gap-6">
+    <View className="bg-primary-100 h-full pt-20 gap-6">
       <StatusBar style="light" />
 
       <Slot />
