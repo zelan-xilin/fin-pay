@@ -69,7 +69,10 @@ export default function SignIn() {
             className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
             onChangeText={(text) => setUser({ ...user, password: text })}
           />
-          <Pressable className="items-end">
+          <Pressable
+            className="items-end"
+            onPress={() => router.push("/forgot")}
+          >
             <Text className="caption-secondary text-neutral-400">
               Forgot your password?
             </Text>
