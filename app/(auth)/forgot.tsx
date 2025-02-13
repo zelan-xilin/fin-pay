@@ -303,18 +303,20 @@ export default function Forgot() {
         </Text>
       </Pressable>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerClassName="flex-1 bg-white p-6 rounded-t-3xl"
-      >
-        {step === "email" && <Email onChange={emailChange} />}
+      <View className="flex-1 bg-neutral-600 rounded-t-3xl">
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerClassName="p-6"
+        >
+          {step === "email" && <Email onChange={emailChange} />}
 
-        {step === "code" && <Code email={email} onChange={codeChange} />}
+          {step === "code" && <Code email={email} onChange={codeChange} />}
 
-        {step === "password" && <Password onChange={passwordChange} />}
+          {step === "password" && <Password onChange={passwordChange} />}
 
-        {step === "success" && <Success onChange={onSuccess} />}
-      </ScrollView>
+          {step === "success" && <Success onChange={onSuccess} />}
+        </ScrollView>
+      </View>
     </>
   );
 }

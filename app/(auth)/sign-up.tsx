@@ -54,100 +54,102 @@ export default function SignIn() {
         <Text className="heading-secondary text-neutral-600">Sign Up</Text>
       </Pressable>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerClassName="flex-1 bg-white p-6 gap-12 rounded-t-3xl"
-      >
-        <View>
-          <Text className="heading-primary text-primary-100">
-            Welcome to us,
-          </Text>
-          <Text className="caption-secondary text-neutral-100">
-            Hello there, create New account
-          </Text>
-        </View>
+      <View className="flex-1 bg-neutral-600 rounded-t-3xl">
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerClassName="p-6 gap-12"
+        >
+          <View>
+            <Text className="heading-primary text-primary-100">
+              Welcome to us,
+            </Text>
+            <Text className="caption-secondary text-neutral-100">
+              Hello there, create New account
+            </Text>
+          </View>
 
-        <Image
-          source={setting.user}
-          className="w-4/5 h-48 mx-auto"
-          resizeMode="contain"
-        />
-
-        <View className="gap-4">
-          <TextInput
-            keyboardType="email-address"
-            placeholder="Email"
-            className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
-            onChangeText={(text) => setUser({ ...user, email: text })}
-          />
-          <TextInput
-            placeholder="Account"
-            className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
-            onChangeText={(text) => setUser({ ...user, account: text })}
-          />
-          <TextInput
-            secureTextEntry
-            placeholder="Password"
-            className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
-            onChangeText={(text) => setUser({ ...user, password: text })}
+          <Image
+            source={setting.user}
+            className="w-4/5 h-48 mx-auto"
+            resizeMode="contain"
           />
 
-          <Pressable
-            className="flex-row gap-2 items-start"
-            onPress={() => setUser({ ...user, agree: !user.agree })}
-          >
-            <Image
-              source={user.agree ? icon.icon46 : icon.icon47}
-              className="size-6"
-              resizeMode="contain"
-              tintColor={
-                agreementError
-                  ? colors.semantic[100]
-                  : user.agree
-                  ? colors.primary[100]
-                  : colors.neutral[400]
-              }
+          <View className="gap-4">
+            <TextInput
+              keyboardType="email-address"
+              placeholder="Email"
+              className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
+              onChangeText={(text) => setUser({ ...user, email: text })}
+            />
+            <TextInput
+              placeholder="Account"
+              className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
+              onChangeText={(text) => setUser({ ...user, account: text })}
+            />
+            <TextInput
+              secureTextEntry
+              placeholder="Password"
+              className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
+              onChangeText={(text) => setUser({ ...user, password: text })}
             />
 
-            <Text
-              className={`body-secondary ${
-                agreementError ? "text-semantic-100" : "text-neutral-100"
-              }`}
+            <Pressable
+              className="flex-row gap-2 items-start"
+              onPress={() => setUser({ ...user, agree: !user.agree })}
             >
-              By creating an account your agree to our{" "}
+              <Image
+                source={user.agree ? icon.icon46 : icon.icon47}
+                className="size-6"
+                resizeMode="contain"
+                tintColor={
+                  agreementError
+                    ? colors.semantic[100]
+                    : user.agree
+                    ? colors.primary[100]
+                    : colors.neutral[400]
+                }
+              />
+
               <Text
-                className={`caption-primary ${
-                  agreementError ? "text-semantic-100" : "text-primary-100"
+                className={`body-secondary ${
+                  agreementError ? "text-semantic-100" : "text-neutral-100"
                 }`}
               >
-                Term and Conditions
+                By creating an account your agree to our{" "}
+                <Text
+                  className={`caption-primary ${
+                    agreementError ? "text-semantic-100" : "text-primary-100"
+                  }`}
+                >
+                  Term and Conditions
+                </Text>
               </Text>
-            </Text>
+            </Pressable>
+          </View>
+
+          <Pressable
+            className={`h-14 items-center justify-center rounded-2xl ${
+              user.email && user.account && user.password
+                ? "bg-primary-100"
+                : "bg-primary-400"
+            }`}
+            onPress={onRegister}
+          >
+            <Text className="body-primary text-neutral-600">Sign Up</Text>
           </Pressable>
-        </View>
 
-        <Pressable
-          className={`h-14 items-center justify-center rounded-2xl ${
-            user.email && user.account && user.password
-              ? "bg-primary-100"
-              : "bg-primary-400"
-          }`}
-          onPress={onRegister}
-        >
-          <Text className="body-primary text-neutral-600">Sign Up</Text>
-        </Pressable>
+          <Pressable
+            className="flex-row items-center justify-center gap-2"
+            onPress={() => router.push("/sign-in")}
+          >
+            <Text className="body-secondary text-neutral-100">
+              Have an account?
+            </Text>
 
-        <Pressable
-          className="flex-row items-center justify-center gap-2"
-          onPress={() => router.push("/sign-in")}
-        >
-          <Text className="body-secondary text-neutral-100">
-            Have an account?
-          </Text>
-
-          <Text className="caption-primary text-primary-100">Sign In</Text>
-        </Pressable>
-      </ScrollView>
+            <Text className="caption-primary text-primary-100">Sign In</Text>
+          </Pressable>
+        </ScrollView>
+      </View>
     </>
   );
 }

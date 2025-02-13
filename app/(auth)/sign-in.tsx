@@ -39,73 +39,79 @@ export default function SignIn() {
         <Text className="heading-secondary text-neutral-600">Sign In</Text>
       </Pressable>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerClassName="flex-1 bg-white p-6 gap-12 rounded-t-3xl"
-      >
-        <View>
-          <Text className="heading-primary text-primary-100">Welcome Back</Text>
-          <Text className="caption-secondary text-neutral-100">
-            Hello there, sign in to continue
-          </Text>
-        </View>
-
-        <Image
-          source={setting.safe}
-          className="w-4/5 h-48 mx-auto"
-          resizeMode="contain"
-        />
-
-        <View className="gap-4">
-          <TextInput
-            placeholder="Account"
-            className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
-            onChangeText={(text) => setUser({ ...user, account: text })}
-          />
-          <TextInput
-            secureTextEntry
-            placeholder="Password"
-            className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
-            onChangeText={(text) => setUser({ ...user, password: text })}
-          />
-          <Pressable
-            className="items-end"
-            onPress={() => router.push("/forgot")}
-          >
-            <Text className="caption-secondary text-neutral-400">
-              Forgot your password?
-            </Text>
-          </Pressable>
-        </View>
-
-        <Pressable
-          className={`h-14 items-center justify-center rounded-2xl ${
-            user.account && user.password ? "bg-primary-100" : "bg-primary-400"
-          }`}
-          onPress={onLogin}
+      <View className="flex-1 bg-neutral-600 rounded-t-3xl">
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerClassName="p-6 gap-12"
         >
-          <Text className="body-primary text-neutral-600">Sign In</Text>
-        </Pressable>
+          <View>
+            <Text className="heading-primary text-primary-100">
+              Welcome Back
+            </Text>
+            <Text className="caption-secondary text-neutral-100">
+              Hello there, sign in to continue
+            </Text>
+          </View>
 
-        <Pressable>
           <Image
-            source={setting.fingerprint}
-            className="size-16 mx-auto"
+            source={setting.safe}
+            className="w-4/5 h-48 mx-auto"
             resizeMode="contain"
           />
-        </Pressable>
 
-        <Pressable
-          className="flex-row items-center justify-center gap-2"
-          onPress={() => router.push("/sign-up")}
-        >
-          <Text className="body-secondary text-neutral-100">
-            Don't have an account?
-          </Text>
+          <View className="gap-4">
+            <TextInput
+              placeholder="Account"
+              className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
+              onChangeText={(text) => setUser({ ...user, account: text })}
+            />
+            <TextInput
+              secureTextEntry
+              placeholder="Password"
+              className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
+              onChangeText={(text) => setUser({ ...user, password: text })}
+            />
+            <Pressable
+              className="items-end"
+              onPress={() => router.push("/forgot")}
+            >
+              <Text className="caption-secondary text-neutral-400">
+                Forgot your password?
+              </Text>
+            </Pressable>
+          </View>
 
-          <Text className="caption-primary text-primary-100">Sign Up</Text>
-        </Pressable>
-      </ScrollView>
+          <Pressable
+            className={`h-14 items-center justify-center rounded-2xl ${
+              user.account && user.password
+                ? "bg-primary-100"
+                : "bg-primary-400"
+            }`}
+            onPress={onLogin}
+          >
+            <Text className="body-primary text-neutral-600">Sign In</Text>
+          </Pressable>
+
+          <Pressable>
+            <Image
+              source={setting.fingerprint}
+              className="size-16 mx-auto"
+              resizeMode="contain"
+            />
+          </Pressable>
+
+          <Pressable
+            className="flex-row items-center justify-center gap-2"
+            onPress={() => router.push("/sign-up")}
+          >
+            <Text className="body-secondary text-neutral-100">
+              Don't have an account?
+            </Text>
+
+            <Text className="caption-primary text-primary-100">Sign Up</Text>
+          </Pressable>
+        </ScrollView>
+      </View>
     </>
   );
 }
