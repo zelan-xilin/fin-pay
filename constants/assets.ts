@@ -175,3 +175,8 @@ export const setting = {
   safe,
   user,
 };
+
+import account from "../assets/images/account.png";
+export const images = {
+  account,
+};
