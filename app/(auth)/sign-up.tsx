@@ -81,7 +81,6 @@ export default function SignIn() {
             onChangeText={(text) => setUser({ ...user, email: text })}
           />
           <TextInput
-            keyboardType="numeric"
             placeholder="Account"
             className="h-14 px-4 border body-tertiary border-neutral-400 rounded-2xl"
             onChangeText={(text) => setUser({ ...user, account: text })}
