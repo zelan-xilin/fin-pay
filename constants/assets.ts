@@ -177,6 +177,14 @@ export const setting = {
 };
 
 import account from "../assets/images/account.png";
+import branch from "../assets/images/branch.png";
+import exchange from "../assets/images/exchange.png";
+import exchangeRate from "../assets/images/exchangeRate.png";
+import interestRate from "../assets/images/interestRate.png";
 export const images = {
   account,
+  branch,
+  exchange,
+  exchangeRate,
+  interestRate,
 };
