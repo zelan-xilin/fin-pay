@@ -3,6 +3,7 @@ import colors from "@/constants/colors";
 import { useGlobalContext } from "@/lib/GlobalContext";
 import { getScreen } from "@/lib/utils";
 import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
   FlatList,
@@ -40,6 +41,8 @@ export default function Home() {
 
   return (
     <View className="bg-primary-100 h-full pt-20 gap-6">
+      <StatusBar style="light" />
+
       <View className="flex-row px-6 gap-4 items-center justify-between">
         <View className="flex-row gap-4 items-center">
           <Image
